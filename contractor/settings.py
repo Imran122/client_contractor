@@ -41,7 +41,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 
-ALLOWED_HOSTS = ['21af14eb2b04.ngrok.io','127.0.0.1']
+ALLOWED_HOSTS = ['cb8309fc9b04.ngrok.io','127.0.0.1']
 
 
 # Application definition

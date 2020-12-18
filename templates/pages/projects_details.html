@@ -11,10 +11,13 @@
 {% block content %}
  <section>
     <div class="block no-padding">
+    
         <div class="banner-section">
+
             <img src="{{ project.image1.url }}"  alt="">
             <h2 style="background-color: #e24821;">commercial real state 1</h2>
         </div><!--banner-section end-->
+       
     </div>
 </section> 
 
@@ -46,10 +49,10 @@
                             <strong>Budget Range</strong> {{ project.min_budget }} - {{ project.max_budget }} USD
                       
                         </li>
-                        <li>
+                        {% comment %} <li>
                             <strong>Project Type</strong>  {{ project.category }}
                             
-                        </li>
+                        </li> {% endcomment %}
                         <li>
                             <strong>Service Provided</strong>  {{ project.services }}
 

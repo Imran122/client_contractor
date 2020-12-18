@@ -48,7 +48,7 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse('project',kwargs={ 'slug': self.slug})
 
-def create_slug(instance, new_slug=None):
+def create_slugy(instance, new_slug=None):
     slug = slugify(instance.title)
     if new_slug is not None:
         slug = new_slug
@@ -56,13 +56,13 @@ def create_slug(instance, new_slug=None):
     exists = qs.exists()
     if exists:
         new_slug = "%s-%s" % (slug, qs.first().id)
-        return create_slug(instance, new_slug=new_slug)
+        return create_slugy(instance, new_slug=new_slug)
     return slug
     
-def pre_save_post_receiver(sender, instance, *args, **kwargs):
+def pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = create_slug(instance)
-pre_save.connect(pre_save_post_receiver, Project)
+        instance.slug = create_slugy(instance)
+pre_save.connect(pre_save_receiver, Project)
 
 
 # for job purpose work
