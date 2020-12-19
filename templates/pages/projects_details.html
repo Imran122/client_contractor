@@ -49,10 +49,13 @@
                             <strong>Budget Range</strong> {{ project.min_budget }} - {{ project.max_budget }} USD
                       
                         </li>
-                        {% comment %} <li>
-                            <strong>Project Type</strong>  {{ project.category }}
-                            
-                        </li> {% endcomment %}
+
+                         <li>
+                         {% for cat in project.categories.all %}
+                            <strong>Project Type</strong>  {{ cat.title }}
+                            {% endfor %}
+                        </li>
+
                         <li>
                             <strong>Service Provided</strong>  {{ project.services }}
 

@@ -20,6 +20,7 @@ def home(request):
 
 def projects(request):
     project_list = Project.objects.all()
+    
     context ={
         'project_list': project_list,
     }
@@ -31,6 +32,7 @@ def projects(request):
 
 def projects_details(request,slug):
     project = Project.objects.filter(slug=slug)
+    
     if project.exists():
         project = project.first()
     else:
@@ -38,6 +40,7 @@ def projects_details(request,slug):
     
     context = {
         'project': project,
+        
     }
 
     return render(request, 'pages/projects_details.html',context)
