@@ -20,9 +20,11 @@ def home(request):
 
 def projects(request):
     project_list = Project.objects.all()
+    categoreys = Categorey.objects.all()
     
     context ={
         'project_list': project_list,
+        'categoreys':categoreys,
     }
 
 
@@ -156,3 +158,5 @@ def job_details(request,slug):
         'form': form,
     }
     return render(request, 'pages/job_details.html',context)
+
+

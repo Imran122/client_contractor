@@ -38,9 +38,12 @@
                     <div class="option-isotop">
                         <ul id="filter" class="option-set filters-nav" data-option-key="filter">
                             <li><a class="selected" data-option-value="*">All</a></li>
+                           
+                            {% for cat in categoreys %}
+                                <li><a data-option-value="">{{cat.title}}</a> 
                             
-                                <li><a data-option-value="">Commercials</a></li>
-                                <li><a data-option-value="">Residential</a></li>
+                                </li>
+                               {% endfor %}
                             
                             <!--<li><a data-option-value=".commercials">Commercials</a></li>
                             <li><a data-option-value=".buildings">Buildings</a></li>
